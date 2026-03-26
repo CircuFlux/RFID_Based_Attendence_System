@@ -83,7 +83,7 @@ An IoT-based **contactless attendance system** using ESP32 and RFID that logs re
 
 ## 📸 Demo
 
-![Setup](Images/DEvices.png)
+![Setup](Images/Devices.png)
 ![Setup](Images/MFRC522-Connections.png)
 ![Setup](Images/OLED-Connections.png)
 ![Setup](Images/Buzzer-and-Led.png)
