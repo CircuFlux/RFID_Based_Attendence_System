@@ -42,13 +42,18 @@ function handleRequest(params) {
 
     // Search for existing entry today with empty exit
     var lastRow = sheet.getLastRow();
+    
     for (var i = 2; i <= lastRow; i++) {
       var rowRoll = sheet.getRange(i, 3).getValue();
-      var rowDate = sheet.getRange(i, 4).getValue();
-      var rowExit = sheet.getRange(i, 6).getValue();
+      var rowDate = sheet.getRange(i, 5).getValue();
+      var rowExit = sheet.getRange(i, 7).getValue(); 
 
-      if (rowRoll == roll && rowDate == date && rowExit == "") {
-        sheet.getRange(i, 6).setValue(time);
+      if (
+          rowRoll == roll &&
+          String(rowDate).includes(date) &&
+          rowExit == ""
+        ) {
+        sheet.getRange(i, 7).setValue(time);
         return ContentService.createTextOutput("EXIT");
       }
     }
